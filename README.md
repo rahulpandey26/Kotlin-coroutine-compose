@@ -1,4 +1,4 @@
-# AndroidInterviewProject1
+# Android Project with Compose
 
 ## Description:
 

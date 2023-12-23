@@ -1,112 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingStart="@dimen/space_8"
-    tools:context=".ui.detail.DetailActivity"
-    android:visibility="gone">
-
-    <ImageView
-        android:id="@+id/ivCountry"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="@dimen/space_10"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="@tools:sample/lorem" />
+    android:layout_height="wrap_content"
+    android:foreground="?android:attr/selectableItemBackground"
+    tools:ignore="UnusedAttribute">
 
     <TextView
         android:id="@+id/title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:padding="@dimen/space_8"
-        android:textSize="@dimen/text_size_16"
-        android:textStyle="bold"
-        app:layout_constraintLeft_toRightOf="@id/ivCountry"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@tools:sample/lorem" />
-
-    <TextView
-        android:id="@+id/tvNativeNameTitle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/space_4"
-        android:text="@string/native_name"
-        android:textSize="@dimen/text_size_12"
-        android:textStyle="bold"
-        app:layout_constraintLeft_toRightOf="@id/ivCountry"
-        app:layout_constraintTop_toBottomOf="@id/title"
-        tools:text="@tools:sample/lorem" />
-
-    <TextView
-        android:id="@+id/tvNativeName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/space_4"
-        android:textSize="@dimen/text_size_12"
-        android:textStyle="bold"
-        app:layout_constraintLeft_toRightOf="@id/ivCountry"
-        app:layout_constraintTop_toBottomOf="@id/tvNativeNameTitle"
-        tools:text="@tools:sample/lorem" />
-
-    <TextView
-        android:id="@+id/tvBoarderCountryCount"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/space_8"
-        android:textSize="@dimen/text_size_16"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvNativeName"
-        tools:text="@tools:sample/lorem" />
-
-    <LinearLayout
-        android:id="@+id/lytBoarderCountry"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="@dimen/space_10"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvBoarderCountryCount"
-        tools:text="@tools:sample/lorem" />
-
-    <TextView
-        android:id="@+id/tvOfficialLanguage"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/space_8"
-        android:textSize="@dimen/text_size_16"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/lytBoarderCountry"
-        tools:text="@tools:sample/lorem" />
-
-    <LinearLayout
-        android:id="@+id/lytCountryLanguage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="@dimen/space_10"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvOfficialLanguage"
-        tools:text="@tools:sample/lorem" />
-
-    <TextView
-        android:id="@+id/tvBack"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/space_8"
-        android:text="@string/back"
-        android:textColor="@color/colorPrimary"
-        android:textSize="@dimen/text_size_16"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/lytCountryLanguage" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,13 +17,16 @@ class DetailComposeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        supportActionBar?.hide()
         init()
 
         val view = ComposeView(this).apply {
             setViewCompositionStrategy(ViewCompositionStrategy.DisposeOnViewTreeLifecycleDestroyed)
             setContent {
-                DetailScreen(viewModel)
+                DetailScreen(
+                    viewModel = viewModel,
+                    onBackPressed = { finish() }
+                )
             }
         }
 
@@ -41,14 +44,10 @@ class DetailComposeActivity : AppCompatActivity() {
             this@DetailComposeActivity.title = it.name
             viewModel.updateUiState(title = country.name)
             viewModel.setImage(countryCode = country.alpha2Code)
-            viewModel.updateUiState(nativeName = country.name)
+            viewModel.updateUiState(nativeName = country.nativeName)
             if (country.borders != null) viewModel.updateUiState(boarderCountries = country.borders)
             viewModel.updateUiState(countryLanguages = country.languages)
         }
-
-        /*  intent.getStringExtra(COUNTRY_CODE)?.let { countryCode ->
-              viewModel.setImage(countryCode = countryCode)
-          }*/
 
         lifecycleScope.launchWhenStarted {
             viewModel.navigationEvents.collect { navigationEvent ->
@@ -61,5 +60,4 @@ class DetailComposeActivity : AppCompatActivity() {
         }
 
     }
-
 }

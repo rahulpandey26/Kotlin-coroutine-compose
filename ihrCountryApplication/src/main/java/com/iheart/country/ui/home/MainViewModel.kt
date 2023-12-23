@@ -23,15 +23,15 @@ class MainViewModel @Inject constructor(private val countryDataRepository: Count
     private val _countriesLiveData = MutableLiveData<List<Country>>()
     val countriesLiveData: LiveData<List<Country>> = _countriesLiveData
 
-    val _errorMessage = MutableLiveData<String>()
+    private val _errorMessage = MutableLiveData<String>()
     val errorMessage: LiveData<String> = _errorMessage
 
-    val _loading = MutableLiveData<Boolean>()
+    private val _loading = MutableLiveData<Boolean>()
     val loading: LiveData<Boolean> = _loading
 
-    var job: Job? = null
+    private var job: Job? = null
 
-    val exceptionHandler = CoroutineExceptionHandler { _, throwable ->
+    private val exceptionHandler = CoroutineExceptionHandler { _, throwable ->
         onError("Exception handled: ${throwable.localizedMessage}")
     }
 

@@ -68,7 +68,6 @@ class DetailViewModel @Inject constructor(private val countryDataRepository: Cou
 
     }
 
-
     fun updateUiState(
         title: String = _uiState.value.title,
         flagImage: Bitmap? = _uiState.value.flagImage,
